@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduGenie - Student Settings</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-container">
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <span>✨ EduGenie</span>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item"><a href="dashboard.html">🏠 Dashboard</a></li>
+        <li class="sidebar-item"><a href="chat.html">🤖 Ask EduGenie</a></li>
+        <li class="sidebar-item"><a href="quiz.html">📝 Quiz Generator</a></li>
+        <li class="sidebar-item"><a href="notes.html">📄 Smart Notes</a></li>
+        <li class="sidebar-item"><a href="planner.html">📅 Study Planner</a></li>
+        <li class="sidebar-item"><a href="progress.html">📊 Learning Progress</a></li>
+        <li class="sidebar-item active"><a href="settings.html">⚙️ Settings</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="index.html" class="nav-link" style="font-size: 13px;">← Back to Landing Page</a>
+      </div>
+    </aside>
+
+    <main class="main-content">
+      <div class="topbar">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button id="mobile-menu-btn" class="btn-secondary" style="padding: 6px 12px;">☰ Menu</button>
+          <span style="font-weight: 700;">Settings ⚙️</span>
+        </div>
+        <button id="theme-toggle" class="btn-secondary" style="padding: 6px 14px;">🌓 Theme</button>
+      </div>
+
+      <div class="content-body" style="max-width: 800px; margin: 0 auto; width: 100%;">
+        <div style="margin-bottom: 24px;">
+          <h1 style="font-size: 26px; font-weight: 800;">Settings ⚙️</h1>
+          <p style="font-size: 14px; color: var(--text-muted);">Manage your profile details and app preferences.</p>
+        </div>
+
+        <div class="card" style="margin-bottom: 24px;">
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+            Profile Information
+          </h3>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Student Name</label>
+              <input type="text" id="setting-name" value="Aditya Sharma" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Course</label>
+              <input type="text" id="setting-course" value="B.Tech Computer Science & Engineering" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Year</label>
+              <select id="setting-year" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+                <option>1st Year</option>
+                <option>2nd Year</option>
+                <option selected>3rd Year</option>
+                <option>4th Year</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-bottom: 24px;">
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 16px; border-bottom: 1px solid var(--border-color); padding-bottom: 8px;">
+            Preferences
+          </h3>
+
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Language</label>
+              <select style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+                <option selected>English</option>
+                <option>Tamil (தமிழ்)</option>
+                <option>Hindi (हिंदी)</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Theme</label>
+              <select id="theme-select" onchange="document.documentElement.setAttribute('data-theme', this.value); localStorage.setItem('edugenie-theme', this.value);" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+                <option value="light">Light</option>
+                <option value="dark">Dark</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Notification</label>
+              <select style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+                <option selected>On</option>
+                <option>Off</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <button type="button" class="btn-primary" onclick="alert('Changes saved successfully!');" style="padding: 12px 28px;">Save Changes</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

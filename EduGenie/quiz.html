@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduGenie - AI Quiz Generator</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-container">
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <span>✨ EduGenie</span>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item"><a href="dashboard.html">🏠 Dashboard</a></li>
+        <li class="sidebar-item"><a href="chat.html">🤖 Ask EduGenie</a></li>
+        <li class="sidebar-item active"><a href="quiz.html">📝 Quiz Generator</a></li>
+        <li class="sidebar-item"><a href="notes.html">📄 Smart Notes</a></li>
+        <li class="sidebar-item"><a href="planner.html">📅 Study Planner</a></li>
+        <li class="sidebar-item"><a href="progress.html">📊 Learning Progress</a></li>
+        <li class="sidebar-item"><a href="settings.html">⚙️ Settings</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="index.html" class="nav-link" style="font-size: 13px;">← Back to Landing Page</a>
+      </div>
+    </aside>
+
+    <main class="main-content" id="quiz-container">
+      <div class="topbar">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button id="mobile-menu-btn" class="btn-secondary" style="padding: 6px 12px;">☰ Menu</button>
+          <span style="font-weight: 700;">AI Quiz Generator 📝</span>
+        </div>
+        <button id="theme-toggle" class="btn-secondary" style="padding: 6px 14px;">🌓 Theme</button>
+      </div>
+
+      <div class="content-body" style="max-width: 800px; margin: 0 auto; width: 100%;">
+        <!-- Header -->
+        <div style="margin-bottom: 24px;">
+          <h1 style="font-size: 26px; font-weight: 800;">AI Quiz Generator 📝</h1>
+          <p style="font-size: 14px; color: var(--text-muted);">Generate personalized quizzes from any topic to test your knowledge.</p>
+        </div>
+
+        <!-- 1. Config Form -->
+        <div class="card" id="quiz-config-section">
+          <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 16px;">Customize Your Quiz</h3>
+          
+          <div style="display: flex; flex-direction: column; gap: 16px;">
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Subject</label>
+              <select id="quiz-subject" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+                <option value="Python">Python</option>
+                <option value="Java">Java</option>
+                <option value="Data Science">Data Science</option>
+                <option value="Machine Learning">Machine Learning</option>
+                <option value="Mathematics">Mathematics</option>
+                <option value="Computer Science">Computer Science</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Topic</label>
+              <input type="text" id="quiz-topic" placeholder="Enter topic (e.g. Lists, Object Oriented Programming, Regression)" value="Data Analysis with Python" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div>
+                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Number of Questions</label>
+                <select id="quiz-count" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+                  <option value="5">5 Questions</option>
+                  <option value="10">10 Questions</option>
+                  <option value="15">15 Questions</option>
+                </select>
+              </div>
+
+              <div>
+                <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Difficulty</label>
+                <select id="quiz-difficulty" style="width: 100%; padding: 12px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+                  <option value="Easy">Easy</option>
+                  <option value="Medium" selected>Medium</option>
+                  <option value="Hard">Hard</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="button" id="generate-quiz-btn" class="btn-primary" style="margin-top: 8px; padding: 12px;">Generate Quiz</button>
+          </div>
+        </div>
+
+        <!-- 2. Live Quiz Section -->
+        <div class="card" id="quiz-live-section" style="display: none;">
+          <h3 id="quiz-question-text" style="font-size: 18px; font-weight: 700; margin-bottom: 20px;">Question 1</h3>
+          <div id="quiz-options-container" style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px;"></div>
+          
+          <div style="display: flex; justify-content: flex-end; gap: 12px;">
+            <button id="quiz-next-btn" class="btn-primary">Next Question →</button>
+            <button id="quiz-submit-btn" class="btn-primary" style="display: none; background: var(--success-color);">Submit Quiz ✓</button>
+          </div>
+        </div>
+
+        <!-- 3. Results Score Card -->
+        <div class="card" id="quiz-results-section" style="display: none; text-align: center; padding: 48px 24px;">
+          <div style="font-size: 48px; margin-bottom: 12px;">🏆</div>
+          <h2 id="quiz-score-display" style="font-size: 24px; font-weight: 800; margin-bottom: 16px;">
+            Your Score: 4/5 (80%)<br>
+            <span style="font-size: 16px; color: var(--text-muted);">Great job! Keep learning.</span>
+          </h2>
+          <button id="quiz-retake-btn" class="btn-primary" style="margin-top: 16px;">Create Another Quiz</button>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

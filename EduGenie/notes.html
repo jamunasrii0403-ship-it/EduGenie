@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduGenie - Smart Notes Summarizer</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-container">
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <span>✨ EduGenie</span>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item"><a href="dashboard.html">🏠 Dashboard</a></li>
+        <li class="sidebar-item"><a href="chat.html">🤖 Ask EduGenie</a></li>
+        <li class="sidebar-item"><a href="quiz.html">📝 Quiz Generator</a></li>
+        <li class="sidebar-item active"><a href="notes.html">📄 Smart Notes</a></li>
+        <li class="sidebar-item"><a href="planner.html">📅 Study Planner</a></li>
+        <li class="sidebar-item"><a href="progress.html">📊 Learning Progress</a></li>
+        <li class="sidebar-item"><a href="settings.html">⚙️ Settings</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="index.html" class="nav-link" style="font-size: 13px;">← Back to Landing Page</a>
+      </div>
+    </aside>
+
+    <main class="main-content" id="notes-form">
+      <div class="topbar">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button id="mobile-menu-btn" class="btn-secondary" style="padding: 6px 12px;">☰ Menu</button>
+          <span style="font-weight: 700;">Smart Notes 📄</span>
+        </div>
+        <button id="theme-toggle" class="btn-secondary" style="padding: 6px 14px;">🌓 Theme</button>
+      </div>
+
+      <div class="content-body" style="max-width: 900px; margin: 0 auto; width: 100%;">
+        <!-- Header -->
+        <div style="margin-bottom: 24px;">
+          <h1 style="font-size: 26px; font-weight: 800;">Smart Notes 📄</h1>
+          <p style="font-size: 14px; color: var(--text-muted);">Convert lengthy study material into simple notes using AI.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+          <!-- Left: Input Area -->
+          <div class="card">
+            <h3 style="font-size: 16px; font-weight: 700; margin-bottom: 12px;">Input Study Material</h3>
+            <textarea id="raw-notes-input" rows="12" placeholder="Paste your study material here..." style="width: 100%; padding: 14px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main); font-size: 14px; line-height: 1.5; resize: vertical;">Machine learning is a branch of artificial intelligence and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy. Through the use of statistical methods, algorithms are trained to make classifications or predictions, and to uncover key insights within data mining projects. Common applications include recommendation systems and fraud detection.</textarea>
+            
+            <button type="button" id="summarize-notes-btn" class="btn-primary" style="width: 100%; margin-top: 16px;">Summarize with AI</button>
+          </div>
+
+          <!-- Right: AI Output Area -->
+          <div class="card" id="notes-output-section">
+            <div style="border-bottom: 1px solid var(--border-color); padding-bottom: 12px; margin-bottom: 16px;">
+              <span class="badge" style="margin-bottom: 6px;">AI Summary</span>
+              <h2 style="font-size: 18px; font-weight: 700;">Machine Learning</h2>
+            </div>
+
+            <!-- Bullet Points -->
+            <ul style="padding-left: 20px; font-size: 14px; line-height: 1.7; margin-bottom: 20px; color: var(--text-main);">
+              <li>Machine learning allows computers to learn from data.</li>
+              <li>It identifies patterns in datasets.</li>
+              <li>It can be used for prediction and classification.</li>
+              <li>Common applications include recommendation systems and fraud detection.</li>
+            </ul>
+
+            <!-- Key Terms -->
+            <div style="margin-bottom: 24px;">
+              <h4 style="font-size: 13px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; color: var(--text-muted);">Key Terms</h4>
+              <div style="display: flex; flex-wrap: wrap; gap: 6px;">
+                <span class="badge" style="background: var(--border-light); color: var(--text-main); font-weight: 600;">Machine Learning</span>
+                <span class="badge" style="background: var(--border-light); color: var(--text-main); font-weight: 600;">Dataset</span>
+                <span class="badge" style="background: var(--border-light); color: var(--text-main); font-weight: 600;">Model</span>
+                <span class="badge" style="background: var(--border-light); color: var(--text-main); font-weight: 600;">Prediction</span>
+                <span class="badge" style="background: var(--border-light); color: var(--text-main); font-weight: 600;">Classification</span>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div style="display: flex; gap: 12px;">
+              <button id="copy-notes-btn" class="btn-secondary" style="flex: 1;">Copy Summary</button>
+              <button id="download-notes-btn" class="btn-primary" style="flex: 1;">Download Notes</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

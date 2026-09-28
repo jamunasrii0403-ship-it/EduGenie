@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduGenie - AI Study Planner</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-container">
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <span>✨ EduGenie</span>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="sidebar-item"><a href="dashboard.html">🏠 Dashboard</a></li>
+        <li class="sidebar-item"><a href="chat.html">🤖 Ask EduGenie</a></li>
+        <li class="sidebar-item"><a href="quiz.html">📝 Quiz Generator</a></li>
+        <li class="sidebar-item"><a href="notes.html">📄 Smart Notes</a></li>
+        <li class="sidebar-item active"><a href="planner.html">📅 Study Planner</a></li>
+        <li class="sidebar-item"><a href="progress.html">📊 Learning Progress</a></li>
+        <li class="sidebar-item"><a href="settings.html">⚙️ Settings</a></li>
+      </ul>
+      <div class="sidebar-footer">
+        <a href="index.html" class="nav-link" style="font-size: 13px;">← Back to Landing Page</a>
+      </div>
+    </aside>
+
+    <main class="main-content" id="planner-form">
+      <div class="topbar">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button id="mobile-menu-btn" class="btn-secondary" style="padding: 6px 12px;">☰ Menu</button>
+          <span style="font-weight: 700;">AI Study Planner 📅</span>
+        </div>
+        <button id="theme-toggle" class="btn-secondary" style="padding: 6px 14px;">🌓 Theme</button>
+      </div>
+
+      <div class="content-body" style="max-width: 900px; margin: 0 auto; width: 100%;">
+        <!-- Header -->
+        <div style="margin-bottom: 24px;">
+          <h1 style="font-size: 26px; font-weight: 800;">AI Study Planner 📅</h1>
+          <p style="font-size: 14px; color: var(--text-muted);">Organize a balanced revision timetable tailored to your semester exams.</p>
+        </div>
+
+        <!-- Form Card -->
+        <div class="card" style="margin-bottom: 24px;">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px;">
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Exam Date</label>
+              <input type="date" value="2026-10-25" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Subjects</label>
+              <input type="text" value="Python, Java, Machine Learning" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Available Study Hours</label>
+              <select style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+                <option>1-2 Hours/day</option>
+                <option selected>2-3 Hours/day</option>
+                <option>3-4 Hours/day</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Difficulty Level</label>
+              <select style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+                <option>Beginner</option>
+                <option selected>Intermediate</option>
+                <option>Advanced</option>
+              </select>
+            </div>
+
+            <div>
+              <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Preferred Study Time</label>
+              <select style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--border-color); background: var(--bg-light); color: var(--text-main);">
+                <option>Morning (7 AM - 10 AM)</option>
+                <option>Afternoon (1 PM - 4 PM)</option>
+                <option selected>Evening (6 PM - 9 PM)</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="button" id="generate-plan-btn" class="btn-primary" style="margin-top: 20px;">Generate Study Plan</button>
+        </div>
+
+        <!-- Schedule Section -->
+        <div class="card" id="planner-schedule-section">
+          <!-- Progress Indicator -->
+          <div style="margin-bottom: 20px;">
+            <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 700; margin-bottom: 6px;">
+              <span>Weekly Completion Progress</span>
+              <span style="color: var(--primary-color);">40% (2 of 5 Sessions)</span>
+            </div>
+            <div style="background: var(--border-light); height: 8px; border-radius: 9999px; overflow: hidden;">
+              <div style="background: var(--primary-color); height: 100%; width: 40%;"></div>
+            </div>
+          </div>
+
+          <!-- Schedule Table -->
+          <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 14px;">
+            <thead>
+              <tr style="border-bottom: 2px solid var(--border-color); color: var(--text-muted);">
+                <th style="padding: 12px 8px;">Day</th>
+                <th style="padding: 12px 8px;">Subject</th>
+                <th style="padding: 12px 8px;">Topic</th>
+                <th style="padding: 12px 8px;">Duration</th>
+                <th style="padding: 12px 8px;">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid var(--border-light);">
+                <td style="padding: 12px 8px; font-weight: 700;">Monday</td>
+                <td style="padding: 12px 8px; color: var(--primary-color);">Python</td>
+                <td style="padding: 12px 8px;">Lists</td>
+                <td style="padding: 12px 8px;">1 Hour</td>
+                <td style="padding: 12px 8px;"><span class="badge" style="background:#dcfce7; color:#15803d;">Completed</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-light);">
+                <td style="padding: 12px 8px; font-weight: 700;">Tuesday</td>
+                <td style="padding: 12px 8px; color: var(--secondary-color);">Machine Learning</td>
+                <td style="padding: 12px 8px;">Algorithms</td>
+                <td style="padding: 12px 8px;">1.5 Hours</td>
+                <td style="padding: 12px 8px;"><span class="badge" style="background:#dcfce7; color:#15803d;">Completed</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-light);">
+                <td style="padding: 12px 8px; font-weight: 700;">Wednesday</td>
+                <td style="padding: 12px 8px; color: var(--primary-color);">Java</td>
+                <td style="padding: 12px 8px;">OOP</td>
+                <td style="padding: 12px 8px;">1 Hour</td>
+                <td style="padding: 12px 8px;"><span class="badge">Scheduled</span></td>
+              </tr>
+              <tr style="border-bottom: 1px solid var(--border-light);">
+                <td style="padding: 12px 8px; font-weight: 700;">Thursday</td>
+                <td style="padding: 12px 8px; color: var(--primary-color);">Python</td>
+                <td style="padding: 12px 8px;">Functions</td>
+                <td style="padding: 12px 8px;">1 Hour</td>
+                <td style="padding: 12px 8px;"><span class="badge">Scheduled</span></td>
+              </tr>
+              <tr>
+                <td style="padding: 12px 8px; font-weight: 700;">Friday</td>
+                <td style="padding: 12px 8px; color: var(--secondary-color);">Machine Learning</td>
+                <td style="padding: 12px 8px;">Revision</td>
+                <td style="padding: 12px 8px;">1.5 Hours</td>
+                <td style="padding: 12px 8px;"><span class="badge">Scheduled</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

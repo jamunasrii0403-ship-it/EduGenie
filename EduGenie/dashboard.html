@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduGenie - Student Dashboard</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="app-container">
+    <!-- =====================================================================
+         SIDEBAR: Navigation Menu
+         ===================================================================== -->
+    <aside class="sidebar" id="app-sidebar">
+      <div class="sidebar-brand">
+        <span>✨ EduGenie</span>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-item active"><a href="dashboard.html">🏠 Dashboard</a></li>
+        <li class="sidebar-item"><a href="chat.html">🤖 Ask EduGenie</a></li>
+        <li class="sidebar-item"><a href="quiz.html">📝 Quiz Generator</a></li>
+        <li class="sidebar-item"><a href="notes.html">📄 Smart Notes</a></li>
+        <li class="sidebar-item"><a href="planner.html">📅 Study Planner</a></li>
+        <li class="sidebar-item"><a href="progress.html">📊 Learning Progress</a></li>
+        <li class="sidebar-item"><a href="settings.html">⚙️ Settings</a></li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <a href="index.html" class="nav-link" style="font-size: 13px;">← Back to Landing Page</a>
+      </div>
+    </aside>
+
+    <!-- =====================================================================
+         MAIN DASHBOARD CONTENT
+         ===================================================================== -->
+    <main class="main-content">
+      <div class="topbar">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <button id="mobile-menu-btn" class="btn-secondary" style="padding: 6px 12px;">☰ Menu</button>
+          <span style="font-weight: 700;">Student Hub</span>
+        </div>
+        <button id="theme-toggle" class="btn-secondary" style="padding: 6px 14px;">🌓 Theme</button>
+      </div>
+
+      <div class="content-body">
+        <!-- Greeting Header -->
+        <div style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; padding: 32px; border-radius: 20px; margin-bottom: 32px;">
+          <h1 style="font-size: 28px; font-weight: 800; margin-bottom: 6px;">Welcome back, Student! 👋</h1>
+          <p style="font-size: 15px; opacity: 0.9;">What would you like to learn today?</p>
+        </div>
+
+        <!-- 4 Primary Action Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px;">
+          
+          <!-- Card 1: Ask EduGenie -->
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 32px; margin-bottom: 12px;">🤖</div>
+              <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Ask EduGenie</h3>
+              <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+                Ask questions and get AI-powered explanations.
+              </p>
+            </div>
+            <a href="chat.html" class="btn-primary" style="width: 100%;">Ask Now</a>
+          </div>
+
+          <!-- Card 2: Quiz Generator -->
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 32px; margin-bottom: 12px;">📝</div>
+              <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Quiz Generator</h3>
+              <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+                Generate personalized quizzes from any topic.
+              </p>
+            </div>
+            <a href="quiz.html" class="btn-primary" style="width: 100%;">Create Quiz</a>
+          </div>
+
+          <!-- Card 3: Smart Notes -->
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 32px; margin-bottom: 12px;">📄</div>
+              <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Smart Notes</h3>
+              <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+                Turn lengthy notes into simple study points.
+              </p>
+            </div>
+            <a href="notes.html" class="btn-primary" style="width: 100%;">Summarize</a>
+          </div>
+
+          <!-- Card 4: Study Planner -->
+          <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 32px; margin-bottom: 12px;">📅</div>
+              <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Study Planner</h3>
+              <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+                Create a personalized study schedule.
+              </p>
+            </div>
+            <a href="planner.html" class="btn-primary" style="width: 100%;">Plan Study</a>
+          </div>
+
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

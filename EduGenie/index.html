@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- EduGenie - Naan Mudhalvan Student Learning Prototype -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EduGenie - Google Gemini Powered Learning Assistant</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- =========================================================================
+       PAGE 1 — LANDING PAGE: Navigation Bar
+       ========================================================================= -->
+  <nav class="landing-nav">
+    <div class="landing-nav-inner">
+      <div class="brand-logo">
+        <span>✨ EduGenie</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#features" class="nav-link">Features</a></li>
+        <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+      </ul>
+
+      <div style="display: flex; gap: 12px; align-items: center;">
+        <button id="theme-toggle" class="btn-secondary" style="padding: 8px 14px;" title="Toggle Dark/Light Mode">🌓 Theme</button>
+        <a href="dashboard.html" class="btn-primary">Start Learning</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       HERO SECTION: Title, Subtitle, CTA buttons, Visual illustration
+       ========================================================================= -->
+  <header id="home" class="hero-section">
+    <div>
+      <span class="badge" style="margin-bottom: 12px;">Naan Mudhalvan College Project</span>
+      <h1 class="hero-title">Learn Smarter with EduGenie</h1>
+      <p class="hero-subtitle">
+        Your AI-powered learning assistant for smarter, faster and personalized learning. Master college engineering topics, generate quizzes, and craft personalized exam schedules in seconds.
+      </p>
+      <div class="hero-buttons">
+        <a href="dashboard.html" class="btn-primary">Start Learning</a>
+        <a href="#features" class="btn-secondary">Explore Features</a>
+      </div>
+      <p style="font-size: 13px; color: var(--text-muted);">
+        ✅ Prototype Demo · Zero API Key Required · Ready for Faculty Review
+      </p>
+    </div>
+
+    <!-- Right Graphic Box -->
+    <div class="card" style="padding: 16px; text-align: center; background: linear-gradient(135deg, rgba(79, 70, 229, 0.05), rgba(124, 58, 237, 0.05));">
+      <div style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white; border-radius: 12px; padding: 48px 24px;">
+        <div style="font-size: 48px; margin-bottom: 12px;">🤖 📚 ✨</div>
+        <h3 style="font-size: 20px; font-weight: 700; margin-bottom: 8px;">EduGenie AI Core</h3>
+        <p style="font-size: 13px; opacity: 0.9;">Conceptual Gemini 1.5 Multi-turn Reasoning</p>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       FEATURE CARDS SECTION
+       ========================================================================= -->
+  <section id="features" class="features-grid">
+    <!-- Card 1: AI Learning -->
+    <div class="card">
+      <div style="font-size: 28px; margin-bottom: 12px;">📚</div>
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">AI Learning</h3>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+        Interactive explanations, simple breakdowns, and code examples for complex engineering topics.
+      </p>
+      <a href="chat.html" class="btn-secondary" style="width: 100%;">Ask EduGenie</a>
+    </div>
+
+    <!-- Card 2: Smart Quiz -->
+    <div class="card">
+      <div style="font-size: 28px; margin-bottom: 12px;">📝</div>
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Smart Quiz</h3>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+        Dynamic MCQs across Python, Java, Machine Learning, and Data Science with automated scoring.
+      </p>
+      <a href="quiz.html" class="btn-secondary" style="width: 100%;">Create Quiz</a>
+    </div>
+
+    <!-- Card 3: Notes Summary -->
+    <div class="card">
+      <div style="font-size: 28px; margin-bottom: 12px;">📄</div>
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Notes Summary</h3>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+        Turn lengthy textbook paragraphs into bullet points, key definition terms, and exam tips.
+      </p>
+      <a href="notes.html" class="btn-secondary" style="width: 100%;">Summarize Notes</a>
+    </div>
+
+    <!-- Card 4: Study Planner -->
+    <div class="card">
+      <div style="font-size: 28px; margin-bottom: 12px;">📅</div>
+      <h3 style="font-size: 18px; font-weight: 700; margin-bottom: 8px;">Study Planner</h3>
+      <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 16px;">
+        Customized weekly timetables based on your upcoming semester exam dates and study hours.
+      </p>
+      <a href="planner.html" class="btn-secondary" style="width: 100%;">Plan Study</a>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       HOW IT WORKS & ABOUT SECTION
+       ========================================================================= -->
+  <section id="how-it-works" style="max-width: 1200px; margin: 0 auto; padding: 20px 20px 80px;">
+    <div class="card" style="padding: 36px;">
+      <h2 style="font-size: 24px; font-weight: 800; margin-bottom: 16px; text-align: center;">How It Works</h2>
+      <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; margin-top: 24px;">
+        <div>
+          <div class="badge" style="font-size: 14px; margin-bottom: 8px;">Step 1</div>
+          <h4 style="font-size: 16px; font-weight: 700;">Select Curriculum Topic</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Choose from Python, Java, Machine Learning, or paste your course text.</p>
+        </div>
+        <div>
+          <div class="badge" style="font-size: 14px; margin-bottom: 8px;">Step 2</div>
+          <h4 style="font-size: 16px; font-weight: 700;">AI Synthesizes Material</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">EduGenie generates clear notes, quizzes, or step-by-step tutoring responses.</p>
+        </div>
+        <div>
+          <div class="badge" style="font-size: 14px; margin-bottom: 8px;">Step 3</div>
+          <h4 style="font-size: 16px; font-weight: 700;">Track Progress & Excel</h4>
+          <p style="font-size: 13px; color: var(--text-muted); margin-top: 4px;">Review your scores, follow your study timetable, and ace your semester exams.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="border-top: 1px solid var(--border-color); padding: 32px 20px; text-align: center; font-size: 13px; color: var(--text-muted);">
+    <p>EduGenie · Google Gemini Powered Learning Assistant Prototype</p>
+    <p style="margin-top: 4px;">Developed for Naan Mudhalvan College Project Demonstration</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
